@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6F0DB061-4ACA-4DB6-88D2-D6943A5AD938}</ProjectGuid>
+    <RootNamespace>VADRecorder</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>false</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>false</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ColorEdit.cpp" />
+    <ClCompile Include="ReaderQ.cpp" />
+    <ClCompile Include="signal_processing\auto_correlation.c" />
+    <ClCompile Include="signal_processing\auto_corr_to_refl_coef.c" />
+    <ClCompile Include="signal_processing\complex_bit_reverse.c" />
+    <ClCompile Include="signal_processing\complex_fft.c" />
+    <ClCompile Include="signal_processing\copy_set_operations.c" />
+    <ClCompile Include="signal_processing\cross_correlation.c" />
+    <ClCompile Include="signal_processing\division_operations.c" />
+    <ClCompile Include="signal_processing\dot_product_with_scale.c" />
+    <ClCompile Include="signal_processing\downsample_fast.c" />
+    <ClCompile Include="signal_processing\energy.c" />
+    <ClCompile Include="signal_processing\filter_ar.c" />
+    <ClCompile Include="signal_processing\filter_ar_fast_q12.c" />
+    <ClCompile Include="signal_processing\filter_ma_fast_q12.c" />
+    <ClCompile Include="signal_processing\get_hanning_window.c" />
+    <ClCompile Include="signal_processing\get_scaling_square.c" />
+    <ClCompile Include="signal_processing\ilbc_specific_functions.c" />
+    <ClCompile Include="signal_processing\levinson_durbin.c" />
+    <ClCompile Include="signal_processing\lpc_to_refl_coef.c" />
+    <ClCompile Include="signal_processing\min_max_operations.c" />
+    <ClCompile Include="signal_processing\randomization_functions.c" />
+    <ClCompile Include="signal_processing\real_fft.c" />
+    <ClCompile Include="signal_processing\refl_coef_to_lpc.c" />
+    <ClCompile Include="signal_processing\resample.c" />
+    <ClCompile Include="signal_processing\resample_48khz.c" />
+    <ClCompile Include="signal_processing\resample_by_2.c" />
+    <ClCompile Include="signal_processing\resample_by_2_internal.c" />
+    <ClCompile Include="signal_processing\resample_fractional.c" />
+    <ClCompile Include="signal_processing\splitting_filter.c" />
+    <ClCompile Include="signal_processing\spl_init.c" />
+    <ClCompile Include="signal_processing\spl_sqrt.c" />
+    <ClCompile Include="signal_processing\spl_sqrt_floor.c" />
+    <ClCompile Include="signal_processing\spl_version.c" />
+    <ClCompile Include="signal_processing\sqrt_of_one_minus_x_squared.c" />
+    <ClCompile Include="signal_processing\vector_scaling_operations.c" />
+    <ClCompile Include="signal_processing\webrtc_fft_t_1024_8.c" />
+    <ClCompile Include="signal_processing\webrtc_fft_t_rad.c" />
+    <ClCompile Include="SR\samplerate.c" />
+    <ClCompile Include="SR\src_linear.c" />
+    <ClCompile Include="SR\src_sinc.c" />
+    <ClCompile Include="SR\src_zoh.c" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="VADRecorder.cpp" />
+    <ClCompile Include="VADRecorderDlg.cpp" />
+    <ClCompile Include="vad\vad_core.c" />
+    <ClCompile Include="vad\vad_filterbank.c" />
+    <ClCompile Include="vad\vad_gmm.c" />
+    <ClCompile Include="vad\vad_sp.c" />
+    <ClCompile Include="vad\webrtc_vad.c" />
+    <ClCompile Include="WaveIn.cpp" />
+    <ClCompile Include="WaveWriter.cpp" />
+    <ClCompile Include="WriterQ.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Color.h" />
+    <ClInclude Include="ColorEdit.h" />
+    <ClInclude Include="general.h" />
+    <ClInclude Include="ReaderQ.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="signal_processing\complex_fft_tables.h" />
+    <ClInclude Include="signal_processing\resample_by_2_internal.h" />
+    <ClInclude Include="SR\common.h" />
+    <ClInclude Include="SR\config.h" />
+    <ClInclude Include="SR\fastest_coeffs.h" />
+    <ClInclude Include="SR\float_cast.h" />
+    <ClInclude Include="SR\high_qual_coeffs.h" />
+    <ClInclude Include="SR\mid_qual_coeffs.h" />
+    <ClInclude Include="SR\resource.h" />
+    <ClInclude Include="SR\samplerate.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="VADRecorder.h" />
+    <ClInclude Include="VADRecorderDlg.h" />
+    <ClInclude Include="vad\vad_core.h" />
+    <ClInclude Include="vad\vad_filterbank.h" />
+    <ClInclude Include="vad\vad_gmm.h" />
+    <ClInclude Include="vad\vad_sp.h" />
+    <ClInclude Include="WaveIn.h" />
+    <ClInclude Include="WaveWriter.h" />
+    <ClInclude Include="WriterQ.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\VADRecorder.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="VADRecorder.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\VADRecorder.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="VADRecorder.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
