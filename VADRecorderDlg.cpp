@@ -202,6 +202,7 @@ HCURSOR CVADRecorderDlg::OnQueryDragIcon()
 
 int CVADRecorderDlg::OpenInputDevice(void)
 {
+	USES_CONVERSION;
 	int			deviceNo	;
 	int			nT1	=	0	;
 	int			iT1 =	0   ;
@@ -218,7 +219,7 @@ int CVADRecorderDlg::OpenInputDevice(void)
 	if(nT1==-1)
 		return FAILURE;
 	pFormats->GetLBText(nT1,csT1);
-	sscanf_s((PCHAR)(LPCTSTR)csT1,"%lf",&dT1);
+	sscanf_s((PCHAR)T2A(csT1),"%lf",&dT1);
 	dT1=dT1*1000;
 	sps = (int)dT1;
 	csT1=csT1.Right(csT1.GetLength()-csT1.Find(',')-1);
@@ -233,7 +234,7 @@ int CVADRecorderDlg::OpenInputDevice(void)
 	}
 	csT1=csT1.Right(csT1.GetLength()-csT1.Find(',')-1);
 	csT1.Trim();
-	sscanf_s((PCHAR)(LPCTSTR)csT1,"%d",&iT1);
+	sscanf_s((PCHAR)T2A(csT1),"%d",&iT1);
 	bps = iT1;
 	if(bps != 16)
 	{
